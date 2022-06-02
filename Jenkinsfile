@@ -8,12 +8,12 @@ pipeline{
 		}
 		stage("Run Test"){
 			steps{
-				bat "docker-compose up search-module1 search-module2 --no-color" //in jenkins there is no colors while runnign docker
+				bat "docker-compose up search-module1 search-module2 --no-color" //in jenkins there is no colors while running docker
 			}
 		}
 		stage("Stop Grid"){
 			steps{
-				bat "docker-compose down" //stoping server
+				bat "docker-compose down" //stopping server
 			}
 		}	
 	}
