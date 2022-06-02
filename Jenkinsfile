@@ -1,6 +1,11 @@
 pipeline{
 	agent any
 	stages{
+		stage("Pulling Latest Image"){
+			steps{
+				bat "docker pull dgdocker1987/selenium-docker"  // to update image if there are any updates
+			}
+		}
 		stage("Starting Grid"){
 			steps{
 				bat "docker-compose up -d hub chrome firefox" //sh for linux
