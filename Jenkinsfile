@@ -8,7 +8,7 @@ pipeline{
 		}
 		stage("Bring Grid Down"){
 			steps{
-				bat "docker-compose down"
+				bat "docker-compose down" //stoping server
 			}
 		}	
 	}
