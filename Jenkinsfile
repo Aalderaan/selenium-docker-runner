@@ -11,11 +11,12 @@ pipeline{
 				bat "docker-compose up search-module1 search-module2 --no-color" //in jenkins there is no colors while running docker
 			}
 		}
-		post{
-			always{
-				archiveArtifacts artifacts: 'output/**'
-				bat "docker-compose down" //stopping server
-			}
+		
+	}	
+	post("Getting results and Stopping Grid"){
+		always{
+			archiveArtifacts artifacts: 'output/**'
+			bat "docker-compose down" //stopping server
 		}	
 	}
 }
