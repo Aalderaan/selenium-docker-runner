@@ -11,7 +11,7 @@ pipeline{
 				bat "docker-compose up search-module1 search-module2 --no-color" //in jenkins there is no colors while running docker
 			}
 		}
-		post("Getting results and Stopping Grid"){
+		post{
 			always{
 				aschiveArtifacts artifacts: 'output/**'
 				bat "docker-compose down" //stopping server
