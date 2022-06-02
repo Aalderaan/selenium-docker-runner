@@ -13,7 +13,7 @@ pipeline{
 		}
 		post{
 			always{
-				aschiveArtifacts artifacts: 'output/**'
+				archiveArtifacts artifacts: 'output/**'
 				bat "docker-compose down" //stopping server
 			}
 		}	
